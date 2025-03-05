@@ -1,0 +1,15 @@
+site_name: 🌌P.A.R.A System
+site_url: https://funny-han.github.io
+
+nav:
+  - 🏠HOME: index.md
+  - Computer Science 计算基础:
+    - Web 开发:
+      - Django for Beginners 中文翻译:
+        - Chapter 0 Introduction: RESOURCES\computer_science\django_by_example\chapter_00_introduction.md
+        - Chapter 1 Initial Set Up: RESOURCES\computer_science\django_by_example\chapter_01_initial_set_up.md
+theme:
+  name: simple-blog
+
+markdown_extensions:
+  - footnotes
