@@ -1,146 +1,931 @@
+
 <!doctype html>
-<html data-bs-theme="">
-    <head>
-                <title>Chapter 1 Initial Set Up - 🌌P.A.R.A System</title>
-
-            <meta charset="utf-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-            
-            <link rel="canonical" href="https://funny-han.github.io/RESOURCES/computer_science/django_by_example/chapter_01_initial_set_up/">
-            
-
-            
-                <link  rel="icon" type="image/x-icon" href="../../../../assets/img/favicon.ico">
-            
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link rel="stylesheet" href="../../../../assets/css/bootstrap.min.css">
-            <link rel="stylesheet" href="../../../../assets/css/root.min.css">
-            <link rel="stylesheet" href="../../../../assets/css/main.min.css">
-                <script src="../../../../search/main.js"></script>
-
-            
-                
-            
-    </head>
-
-    <body>
-        <div class="container py-3">
-            <header>
-                    <!-- block header -->
-<nav class="navbar navbar-expand-xl border-bottom">
-    <div class="container-fluid">
-        
-
-        
-            <span class=" fs-4 title-color site-name" id="component-site-name" style="text-transform: uppercase;">🌌P.A.R.A System</span>
-        
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
-            aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
-            <ul class="navbar-nav">
-
-                <!-- block menu -->
-                <li class="nav-item">
-                    <!-- block menu -->
+<html lang="en" class="no-js">
+  <head>
     
-        <li class="nav-item" id="component-menu">
-            <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="
-                            nav-link text-gray text-decoration-none" href="../../../..">[🏠HOME]</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class=" active 
-                            nav-link dropdown-toggle text-decoration-none" href="#" data-bs-toggle="dropdown">[Computer Science 计算基础]</a>
-                            <ul class="dropdown-menu">
-                                    <!-- block dropdown-menu -->
-    <li>
-        <a class="dropdown-item text-decoration-none" href="#">Web 开发 &raquo;</a>
-        <ul class="submenu dropdown-menu">
-                <!-- block dropdown-menu -->
-    <li>
-        <a class="dropdown-item text-decoration-none" href="#">Django for Beginners 中文翻译 &raquo;</a>
-        <ul class="submenu dropdown-menu">
-                <!-- block dropdown-menu -->
-    <li>
-        <a href="../chapter_00_introduction/" class="dropdown-item text-decoration-none ">Chapter 0 Introduction</a>
-    </li>
-<!-- endblock -->
-                <!-- block dropdown-menu -->
-    <li>
-        <a href="./" class="dropdown-item text-decoration-none  active ">Chapter 1 Initial Set Up</a>
-    </li>
-<!-- endblock -->
-        </ul>
-    </li>
-<!-- endblock -->
-        </ul>
-    </li>
-<!-- endblock -->
-                            </ul>
-                        </li>
-            </ul>
-        </li>
-<!-- endblock -->
-                </li>
-                <!-- endblock -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://funny-han.github.io/RESOURCES/computer_science/django_by_example/chapter_01_initial_set_up/">
+      
+      
+        <link rel="prev" href="../chapter_00_introduction/">
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>📃 Chapter 1 Initial Set Up - 🌌P.A.R.A System</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
 
-                <!-- block search -->
-                <li class="nav-item">
-                    <a class="collapsed" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                        <div class="md-search-icon">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                        </div>
-                    </a>
-                </li>
-                <!--  endblock -->
 
-                <!-- block source -->
-                <li class="nav-item">
-                    
-                </li>
-                <!--  endblock -->
-            </ul>
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="🌌P.A.R.A System" class="md-header__button md-logo" aria-label="🌌P.A.R.A System" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            🌌P.A.R.A System
+          </span>
         </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              📃 Chapter 1 Initial Set Up
+            
+          </span>
+        </div>
+      </div>
     </div>
-</nav>
-<!--  endblock -->
-            </header>
-
-            <main><!-- block search -->
-<div class="collapse" id="collapseExample">
-    <div role="search" class="search-box">
-        <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
-            <input type="text" name="q" class="search-query"
-            placeholder="Search docs" title="Type search term here" />
-        </form>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
-<!-- endblock -->
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  🏠 HOME 主页
 
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../chapter_00_introduction/" class="md-tabs__link">
+          
+  
+    
+  
+  🌲 Resrouce 资源
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="🌌P.A.R.A System" class="md-nav__button md-logo" aria-label="🌌P.A.R.A System" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    🌌P.A.R.A System
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    🏠 HOME 主页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    🌲 Resrouce 资源
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            🌲 Resrouce 资源
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
                 
-                        <!-- block content -->
-<section class="container post" id="component-content">
-    <article>
-        <header>
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
             
-                <h1 class=" title" id="component-title">Chapter 1 Initial Set Up</h1>
+  
+  <span class="md-ellipsis">
+    💻 计算基础
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            💻 计算基础
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
-        </header>
-        <p><h3 id="1">第 1 章：初始设置</h3>
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    🕸 Web 开发
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            🕸 Web 开发
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1_1" id="__nav_2_1_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    📕 Django 新手入门
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_1_1_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            📕 Django 新手入门
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_00_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📃 Chapter 0 Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    📃 Chapter 1 Initial Set Up
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    📃 Chapter 1 Initial Set Up
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      第 1 章：初始设置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第 1 章：初始设置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      命令行
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shell 命令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-python-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      在 Windows 上安装 Python 3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mac-python-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      在 Mac 上安装 Python 3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python 交互模式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      虚拟环境
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pypipython" class="md-nav__link">
+    <span class="md-ellipsis">
+      PyPI（Python 包索引）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#django" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装 Django
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#django_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一个 Django 项目
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一个 Django 项目">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      开发服务器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      文本编辑器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vscode" class="md-nav__link">
+    <span class="md-ellipsis">
+      VSCode 配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装 Git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      结论
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      第 1 章：初始设置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第 1 章：初始设置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      命令行
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shell 命令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-python-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      在 Windows 上安装 Python 3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mac-python-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      在 Mac 上安装 Python 3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python 交互模式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      虚拟环境
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pypipython" class="md-nav__link">
+    <span class="md-ellipsis">
+      PyPI（Python 包索引）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#django" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装 Django
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#django_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一个 Django 项目
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一个 Django 项目">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      开发服务器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      文本编辑器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vscode" class="md-nav__link">
+    <span class="md-ellipsis">
+      VSCode 配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装 Git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      结论
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>📃 Chapter 1 Initial Set Up</h1>
+
+<h3 id="1">第 1 章：初始设置</h3>
 <p>本章重点介绍如何配置 Windows 或 macOS 电脑，以便进行 Django 项目开发。你可能迫不及待地想要开始，但现在正确配置电脑，日后会为你省去许多麻烦。</p>
 <p>你或许渴望立刻深入学习并开始使用 Django，但为 Django 开发配置电脑是一项一次性任务，未来会带来诸多好处。熟悉命令行和 Shell 命令、了解如何使用虚拟环境、安装最新版本的 Python、使用文本编辑器以及运用 Git 进行版本控制都很重要。在本章结束时，你将从头创建自己的第一个 Django 项目，并且只需敲几下键盘，就能创建和修改新的 Django 项目。</p>
 <h4 id="_1">命令行</h4>
 <p>命令行是一种纯文本界面，可追溯到计算机发展的早期。如果你曾在电视节目或电影中看到黑客在黑色窗口中疯狂打字，那就是命令行。它是大多数计算机用户熟悉的基于鼠标或手指操作的图形用户界面的替代方式。普通计算机用户通常无需使用命令行，但对于软件开发人员而言，它是一个至关重要且经常使用的工具，用于执行程序、安装软件、使用 Git 进行版本控制以及连接到云服务器。通过练习，大多数开发人员会发现命令行是一种更快速、更强大的导航和控制计算机的方式。</p>
 <p>鉴于命令行的用户界面极为简洁，只有一个空白屏幕和一个闪烁的光标，这会让新手望而却步。命令运行后往往没有反馈，而且如果不小心，一个命令就可能清空整个计算机的内容，并且不会弹出任何警告！因此，使用命令行时要格外小心。不要盲目复制和粘贴在网上找到的命令，只信赖可靠的资源。在日常使用中，有多个术语指代命令行：命令行界面（CLI）、控制台、终端、Shell 或提示符。从技术上讲，终端是打开一个新窗口以访问命令行的程序，控制台是一个基于文本的应用程序，而 Shell 是在底层操作系统上运行命令的程序。提示符是输入和运行命令的地方。一开始很容易被这些术语弄混淆，但它们本质上都指的是：命令行是我们在计算机上运行和执行纯文本命令的地方。</p>
-<p>Windows 系统内置的终端和 Shell 都叫 PowerShell。要打开它，找到屏幕底部 Windows 按钮旁边的任务栏，输入“PowerShell”来启动应用程序。它会打开一个新窗口，背景为深蓝色，在“&gt;”提示符后有一个闪烁的光标。这是在我电脑上的显示样子：</p>
+<p>Windows 系统内置的终端和 Shell 都叫 PowerShell。要打开它，找到屏幕底部 Windows 按钮旁边的任务栏中的搜索框，输入“PowerShell”来启动应用程序。它会打开一个新窗口，背景为深蓝色，在“&gt;”提示符后有一个闪烁的光标。这是在我电脑上的显示样子：</p>
 <pre><code class="language-shell">PS C:\Windows\System32&gt;
 </code></pre>
 <p>提示符前的“PS”代表 PowerShell，接着是 Windows 操作系统的初始 C 盘目录，然后是 Windows 目录，其中还有 System32 目录。此时，无需担心“&gt;”提示符左边的内容，它会因每台电脑而异，并且稍后可以自定义。后续在 Windows 系统中，我们将使用更简短的“&gt;”提示符。</p>
@@ -203,7 +988,7 @@ $ pwd /Users/wsv/desktop/code/ch1-setup
 <pre><code class="language-Shell">$ exit
 </code></pre>
 <p>通过练习，命令行操作电脑比使用鼠标效率高得多。完成本书的学习，你无需成为命令行专家：每次我都会提供具体的操作指令。但如果你感兴趣，每个操作系统的完整 Shell 命令列表可在 ss64.com 上查看。</p>
-<h4 id="windows-python-3">在 Windows 系统上安装 Python 3</h4>
+<h4 id="windows-python-3">在 Windows 上安装 Python 3</h4>
 <p>在 Windows 系统中，微软在应用商店中提供了 Python 3 的社区版本。在屏幕底部的搜索栏中输入“python”，在应用商店中选择“Python 3.12”的搜索结果，点击蓝色的“获取”按钮进行下载。</p>
 <p>要确认 Python 是否安装正确，打开一个新的 PowerShell 终端窗口，输入“python --version”。</p>
 <pre><code class="language-Shell">$ python --version Python 3.12.3
@@ -215,7 +1000,7 @@ Python 3.12.3 (v3.12.3:f6650f9ad7, Apr 9 2024, 08:18:47)
 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
 </code></pre>
 <p>你可以通过输入“exit()”或按 Ctrl-Z 再按回车键退出 Python 解释器。</p>
-<h4 id="mac-python-3">在 Mac 系统上安装 Python 3</h4>
+<h4 id="mac-python-3">在 Mac 上安装 Python 3</h4>
 <p>在 Mac 系统中，从 Python 官方网站下载安装程序是最佳选择。在新的浏览器窗口中，访问 <a href="https://www.python.org/downloads/">Python 下载页面</a><sup id="fnref:17"><a class="footnote-ref" href="#fn:17">3</a></sup>，点击“Download the latest version for Mac OS X.”下方的按钮。在撰写本文时，最新版本是 Python 3.12。安装包会保存在“下载”目录中：双击它启动 Python 安装程序，然后按照提示进行操作。</p>
 <p>要确认下载是否成功，打开一个新的终端窗口，输入“python3 --version”。</p>
 <pre><code class="language-Shell">$ python3 --version Python 3.12.3
@@ -359,12 +1144,12 @@ Quit the server with CTRL-BREAK.
 <p>现在有很多现代化的文本编辑器可供选择，它们还带有有用的扩展，让 Python 和 Django 开发更加便捷。两个比较受欢迎的选择是 <a href="https://www.jetbrains.com/pycharm/download/">PyCharm</a><sup id="fnref:25"><a class="footnote-ref" href="#fn:25">11</a></sup> 和 <a href="https://code.visualstudio.com/">Visual Studio Code（VSCode）</a><sup id="fnref:26"><a class="footnote-ref" href="#fn:26">12</a></sup>。PyCharm 有付费的专业版和免费的社区版，而 VSCode 是免费的。最终，选择什么文本编辑器并不重要，结果都是代码。</p>
 <h4 id="vscode">VSCode 配置</h4>
 <p>如果你还没有使用文本编辑器，可以从官方网站下载并安装 VSCode。有三个推荐的配置可以添加，以提高你的开发效率。</p>
-<p>第一个是在 VSCode 中添加官方的 Python 扩展。在 Windows 系统中，导航到 <code>文件 -&gt; 设置 -&gt; 扩展</code> ；在 macOS 系统中，选择 <code>Code -&gt; 设置 -&gt; 扩展</code> ，这样会弹出扩展市场的搜索栏。输入 “python” ，官方的微软扩展会是第一个搜索结果，安装它。</p>
+<p>第一个是在 VSCode 中添加官方的 Python 扩展。在 Windows 系统中，导航到 <code>File -&gt; Settings -&gt; Extensions</code> ；在 macOS 系统中，选择 <code>Code -&gt; Settings -&gt; Extensions</code> ，这样会弹出扩展市场的搜索栏。输入 “python” ，微软官方的扩展会是第一个搜索结果，安装它。</p>
 <p>第二个是添加 <a href="https://pypi.org/project/black/">Black</a><sup id="fnref:27"><a class="footnote-ref" href="#fn:27">13</a></sup>，这是一个 Python 代码格式化工具，正迅速成为 Python 社区的默认选择。在终端中，Windows 系统运行命令 <code>python -m pip install black</code> ，macOS 系统运行命令 <code>python3 -m pip install black</code> 。</p>
 <pre><code class="language-Shell">(.venv) $ python -m pip install black
 </code></pre>
-<p>接下来，在 VSCode 中，Windows 系统通过导航到 <code>文件 -&gt; 首选项 -&gt; 设置</code> ，macOS 系统通过 <code>Code -&gt; 首选项 -&gt; 设置</code> 来打开设置。搜索 “默认格式化程序” ，在 “编辑器：默认格式化程序” 下拉列表中选择 “Black Formatter” 。</p>
-<p>然后搜索 “保存时格式化” ，启用 “编辑器：保存时格式化” 选项。这样，每当保存一个 <code>.py</code> 文件时，Black 会自动格式化你的代码。</p>
+<p>接下来，在 VSCode 中，Windows 系统通过导航到 <code>File -&gt; Preferences  -&gt; Settings</code> ，macOS 系统通过 <code>Code -&gt; Preferences -&gt; Settings</code> 来打开设置。搜索 “default formatter” ，在 “Editor: Default Formatter” 下拉列表中选择 “Black Formatter” 。</p>
+<p>然后搜索 “format on save” ，启用 “Editor: Format on Save.” 选项。这样，每当保存一个 <code>.py</code> 文件时，Black 会自动格式化你的代码。</p>
 <p>为了确认这是否有效，使用文本编辑器在桌面上的 <code>ch1-setup</code> 目录中创建并保存一个名为 <code>hello.py</code> 的新文件，用单引号输入以下内容：</p>
 <pre><code class="language-python"># hello.py
 print('Hello, World!')
@@ -457,60 +1242,61 @@ $ git config --global init.defaultBranch main
 <p>https://developer.apple.com/xcode/&#160;<a class="footnote-backref" href="#fnref:31" title="Jump back to footnote 17 in the text">&#8617;</a></p>
 </li>
 </ol>
-</div></p>
-    </article>
-</section>
-<!-- endblock -->
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
                 
-                
-            </main>
-
-            
-                    <!-- block preview -->
-    <div class="preview row row-cols-md-3 text-center pt-md-3" id="component-preview">
-        <div class="col themed-grid-col">
-            <a rel="prev" href="../chapter_00_introduction/" class="nav-link">
-                <i class="fa fa-arrow-left"></i> Previous
-            </a>
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
-        <div class="col themed-grid-col"></div>
-        <div class="col themed-grid-col">
-            <a rel="next" class="nav-link disabled">
-                Next <i class="fa fa-arrow-right"></i>
-            </a>
-        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
     </div>
-<!-- endblock -->
-            
-
-            
-                    <!-- block footer -->
-<footer class="pt-4 my-md-5 pt-md-5 border-top" id="component-footer">
-    <div class="row">
-        <div class="col-12 col-md">
-                <!-- block copyright -->
-
-    <small class="d-block mb-3">
-        Made with
-        <a href="https://github.com/FernandoCelmer/mkdocs-simple-blog" target="_blank" rel="noopener">
-            Simple Blog for MkDocs
-        </a>
-    </small>
-
-<!-- endblock -->
-        </div>
-    </div>
+  </div>
 </footer>
-<!-- endblock -->
-            
-        </div>
-
-            <script>var base_url = '../../../..';</script>
-            <script src="../../../../assets/js/jquery-3.3.1.slim.min.js""></script>
-            <script src="../../../../assets/js/bootstrap.bundle.min.js""></script>
-            <script src="../../../../assets/js/main.min.js""></script>
-                <script src="../../../../search/main.js" defer></script>
-
-    </body>
-
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.indexes"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
 </html>
