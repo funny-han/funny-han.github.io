@@ -151,7 +151,7 @@ PS C:\Users&gt;
 <p>在 macOS 系统中，内置的终端叫“Terminal”。可以通过聚焦搜索（Spotlight）应用程序打开它：同时按下 Command 键和空格键，然后输入“terminal”。或者，打开一个新的访达（Finder）窗口，导航到“Applications”目录，向下滚动打开“Utilities”目录，然后双击“Terminal”应用程序。它默认会打开一个白色背景的新屏幕，在“%”提示符后有一个闪烁的光标。无需担心“%”提示符左边的内容，它因电脑而异，稍后可以自定义。</p>
 <pre><code class="language-shell">Wills-Macbook-Pro:~ wsv%
 </code></pre>
-<p>自 2019 年起，macOS 的默认 Shell 是 zsh，它使用“%”作为提示符。如果你看到的提示符是“$”，那么你使用的是之前 macOS 的默认 Shell——Bash。虽然本书中的大多数命令在这两种 Shell 中都可以互换使用，但如果你的电脑仍在使用 Bash，建议在网上查找如何通过系统偏好设置切换到 zsh。</p>
+<p>自 2019 年起，macOS 的默认 Shell 是 <a href="https://en.wikipedia.org/wiki/Z_shell">zsh</a><sup id="fnref:15"><a class="footnote-ref" href="#fn:15">1</a></sup>，它使用“%”作为提示符。如果你看到的提示符是“$”，那么你使用的是之前 macOS 的默认 Shell——<a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">Bash</a><sup id="fnref:16"><a class="footnote-ref" href="#fn:16">2</a></sup>。虽然本书中的大多数命令在这两种 Shell 中都可以互换使用，但如果你的电脑仍在使用 Bash，建议在网上查找如何通过系统偏好设置切换到 zsh。</p>
 <p>注意：在本书中，我们将对所有 Shell 命令使用通用的 Unix“$”提示符，而不是在 Windows 系统中用“&gt;”、在 macOS 系统中用“%”来交替显示。</p>
 <h4 id="shell">Shell 命令</h4>
 <p>可用的 Shell 命令有很多，但开发人员日常通常只依赖大约半打命令，需要时再查找更复杂的命令。在大多数情况下，Windows（PowerShell）和 macOS 的命令相似。例如，“whoami”命令在 Windows 系统中返回计算机名/用户名，在 macOS 系统中返回用户名。和所有 Shell 命令一样，输入命令后按回车键执行。注意，“#”符号代表注释，不会在命令行中执行。</p>
@@ -216,7 +216,7 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 </code></pre>
 <p>你可以通过输入“exit()”或按 Ctrl-Z 再按回车键退出 Python 解释器。</p>
 <h4 id="mac-python-3">在 Mac 系统上安装 Python 3</h4>
-<p>在 Mac 系统中，从 Python 官方网站下载安装程序是最佳选择。在新的浏览器窗口中，访问 Python 下载页面，点击“Download the latest version for Mac OS X.”下方的按钮。在撰写本文时，最新版本是 Python 3.12。安装包会保存在“下载”目录中：双击它启动 Python 安装程序，然后按照提示进行操作。</p>
+<p>在 Mac 系统中，从 Python 官方网站下载安装程序是最佳选择。在新的浏览器窗口中，访问 <a href="https://www.python.org/downloads/">Python 下载页面</a><sup id="fnref:17"><a class="footnote-ref" href="#fn:17">3</a></sup>，点击“Download the latest version for Mac OS X.”下方的按钮。在撰写本文时，最新版本是 Python 3.12。安装包会保存在“下载”目录中：双击它启动 Python 安装程序，然后按照提示进行操作。</p>
 <p>要确认下载是否成功，打开一个新的终端窗口，输入“python3 --version”。</p>
 <pre><code class="language-Shell">$ python3 --version Python 3.12.3
 </code></pre>
@@ -239,13 +239,13 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 <h4 id="_2">虚拟环境</h4>
 <p>对于任何新项目而言，安装最新版本的 Python 和 Django 是正确之选。然而在现实中，现有项目依赖旧版本的情况屡见不鲜。设想这样一种场景：项目 A 使用 Django 4.0，而项目 B 使用 Django 5.0。默认情况下，Python 和 Django 是全局安装在计算机上的，每次在不同项目间切换时，安装和重新安装不同版本相当麻烦。</p>
 <p>幸运的是，有一个简单的解决方案。虚拟环境允许你在同一台计算机上为每个 Python 项目创建并管理独立的环境。每个新的 Python 和 Django 项目都应该使用一个专用的虚拟环境。</p>
-<p>实现虚拟环境的方法有多种，最简单的是使用“venv”模块，它是 Python 3 标准库的一部分，已随 Python 安装。要试用它，先导航到桌面上已有的“ch1-setup”目录。</p>
+<p>实现虚拟环境的方法有多种，最简单的是使用“<a href="https://docs.python.org/3/library/venv.html">venv</a><sup id="fnref:18"><a class="footnote-ref" href="#fn:18">4</a></sup>”模块，它是 Python 3 标准库的一部分，已随 Python 安装。要试用它，先导航到桌面上已有的“ch1-setup”目录。</p>
 <pre><code class="language-shell"># Windows
 $ cd onedrive\desktop\code\ch1-setup
 # macOS
 $ cd ~/desktop/code/ch1-setup
 </code></pre>
-<p>要在这个新目录中创建虚拟环境，Windows 系统使用“python -m venv <name_of_env>”格式，macOS 系统使用“python3 -m venv <name_of_env>”格式。这个命令中的“-m”部分称为标志，它是一种约定，用于表明用户请求的是非默认行为。标志的格式通常是“-”加上一个字母或字母组合。由于“venv”是一个模块名，所以“-m”标志是必需的。开发人员可以自行选择合适的环境名称，常见的选择是像我们这里一样，命名为“.venv”。</p>
+<p>要在这个新目录中创建虚拟环境，Windows 系统使用“python -m venv <name_of_env>”格式，macOS 系统使用“python3 -m venv <name_of_env>”格式。这个命令中的<a href="https://docs.python.org/3/using/cmdline.html#cmdoption-m">“-m”部分称为标志</a><sup id="fnref:19"><a class="footnote-ref" href="#fn:19">5</a></sup>，它是一种约定，用于表明用户请求的是非默认行为。标志的格式通常是“-”加上一个字母或字母组合。由于“venv”是一个模块名，所以“-m”标志是必需的。开发人员可以自行选择合适的环境名称，常见的选择是像我们这里一样，命名为“.venv”。</p>
 <pre><code class="language-shell"># Windows
 $ python -m venv .venv
 # macOS
@@ -277,12 +277,12 @@ $
 </code></pre>
 <p>此时，Shell 提示符不再有虚拟环境名称前缀，这意味着会话已恢复正常。</p>
 <h4 id="pypipython">PyPI（Python 包索引）</h4>
-<p>PyPI（Python Package Index）是所有 Python 项目的核心存储库。你可以看到 Django 在其中，本书中用到的所有其他 Python 包也都在。</p>
-<p>我们将使用 pip（最流行的包安装工具）来安装 Python 包。它已随 Python 3 一同安装，但为确保使用的是最新版本的 pip，我们花点时间更新一下。运行以下命令：</p>
+<p><a href="https://pypi.org/">PyPI（Python Package Index）</a><sup id="fnref:20"><a class="footnote-ref" href="#fn:20">6</a></sup>是所有 Python 项目的核心存储库。你可以看到 <a href="https://pypi.org/project/Django/">Django 在其中</a><sup id="fnref:21"><a class="footnote-ref" href="#fn:21">7</a></sup>，本书中用到的所有其他 Python 包也都在。</p>
+<p>我们将使用 <a href="https://pypi.org/project/pip/">pip</a><sup id="fnref:22"><a class="footnote-ref" href="#fn:22">8</a></sup>（最流行的包安装工具）来安装 Python 包。它已随 Python 3 一同安装，但为确保使用的是最新版本的 pip，我们花点时间更新一下。运行以下命令：</p>
 <pre><code class="language-Shell">$ python -m pip install --upgrade pip
 </code></pre>
 <p>这个命令会安装并升级（如有必要）pip 的最新版本。注意，我们此时不在虚拟环境中，所以这个版本的 pip 将被全局安装在本地计算机上。</p>
-<p>为什么我们使用“python -m pip”而不是直接用“pip”来执行这个命令呢？后者确实也能工作，但可能会引发一些问题。使用带有“-m”标志的 python 命令可确保使用的是预期的 Python 版本，即便计算机上安装了多个 Python 版本。例如，若你的计算机上同时安装了 Python 3.7 和 3.12，“pip install”命令可能一会儿使用 Python 3.7，一会儿又使用 Python 3.12，这并非我们期望的行为。如果你好奇背后的原因，Brett Cannon 有更全面的解释。</p>
+<p>为什么我们使用“python -m pip”而不是直接用“pip”来执行这个命令呢？后者确实也能工作，但可能会引发一些问题。使用带有“-m”标志的 python 命令可确保使用的是预期的 Python 版本，即便计算机上安装了多个 Python 版本。例如，若你的计算机上同时安装了 Python 3.7 和 3.12，“pip install”命令可能一会儿使用 Python 3.7，一会儿又使用 Python 3.12，这并非我们期望的行为。如果你好奇背后的原因，<a href="https://snarky.ca/why-you-should-use-python-m-pip/">Brett Cannon</a><sup id="fnref:23"><a class="footnote-ref" href="#fn:23">9</a></sup> 有更全面的解释。</p>
 <h4 id="django">安装 Django</h4>
 <p>既然我们已经学会了如何正确安装 Python、使用虚拟环境，以及将 pip 更新到最新版本，现在是时候首次安装 Django 了。</p>
 <p>在“ch1-setup”目录中，重新激活现有的虚拟环境并安装 Django。</p>
@@ -321,7 +321,7 @@ django_project/
 </code></pre>
 <p>随着你学习 Django 的深入，你会遇到更多类似的情况，即 Django 社区对于正确的最佳实践存在不同的看法。Django 具有很强的可定制性，这是它的一大优势；然而，代价就是这种灵活性可能会带来一定的复杂性。一般来说，研究这些问题，做出决定并坚持下去是个不错的办法！</p>
 <h4 id="_3">开发服务器</h4>
-<p>Django 包含一个内置的轻量级本地开发 Web 服务器，可以通过 <code>runserver</code> 命令访问。开发服务器会为每个请求自动重新加载 Python 代码，并提供静态文件服务。不过，有些操作（如添加文件）不会自动触发重启，所以如果你的代码没有按预期运行，手动重启通常是第一步的调试操作。默认情况下，服务器在 IP 地址 <code>127.0.0.1</code> 的 8000 端口上运行，<code>127.0.0.1</code> 被称为 “回环地址”，因为数据不会从我们的计算机（主机）发送到本地网络或互联网，而是 “回环” 到自身，这样发送数据的计算机就成为了接收者。</p>
+<p>Django 包含一个内置的轻量级本地开发 Web 服务器，可以通过 <a href="https://docs.djangoproject.com/en/5.0/ref/django-admin/"><code>runserver</code></a><sup id="fnref:24"><a class="footnote-ref" href="#fn:24">10</a></sup> 命令访问。开发服务器会为每个请求自动重新加载 Python 代码，并提供静态文件服务。不过，有些操作（如添加文件）不会自动触发重启，所以如果你的代码没有按预期运行，手动重启通常是第一步的调试操作。默认情况下，服务器在 IP 地址 <code>127.0.0.1</code> 的 8000 端口上运行，<code>127.0.0.1</code> 被称为 “回环地址”，因为数据不会从我们的计算机（主机）发送到本地网络或互联网，而是 “回环” 到自身，这样发送数据的计算机就成为了接收者。</p>
 <p>现在让我们启动本地开发服务器，确认一切是否正常工作。我们将使用 <code>manage.py</code> 来执行 <code>runserver</code> 管理命令。</p>
 <pre><code class="language-Shell">(.venv) $ python manage.py runserver
 Watching for file changes with StatReloader
@@ -333,14 +333,13 @@ Django version 5.0.6, using settings 'django_project.settings'
 Starting development server at http://127.0.0.1:8000/
 Quit the server with CTRL-BREAK.
 </code></pre>
-<p>不用理会关于 “18 个未应用的迁移” 的红色文本，我们将在下一章处理这个问题。目前关键的是，在你的网络浏览器中访问 <code>http://127.0.0.1:8000/</code> ，确保能看到以下界面：
-（此处原文可能有界面截图相关描述，但未提供，所以未翻译相关内容）
-安装成功了！恭喜！你看到这个页面是因为你的设置文件中 <code>DEBUG=True</code> ，并且你还没有配置任何 URL。</p>
+<p>不用理会关于 “You have 18 unapplied migration(s). ” 的红色文本，我们将在下一章处理这个问题。目前关键的是，在你的网络浏览器中访问 <code>http://127.0.0.1:8000/</code> ，确保能看到以下界面：</p>
+<p><img alt="Django Welcome Page" src="../assets/ch01_django_welcome_page.png" /></p>
+<p>安装成功了！恭喜！你看到这个页面是因为你的设置文件中 <code>DEBUG=True</code> ，并且你还没有配置任何 URL。</p>
 <p>注意：在 Windows 系统上，最后一行提示使用 <code>CONTROL-BREAK</code> 来停止服务器，而在 macOS 系统上是使用 <code>CONTROL-C</code> 。较新的 Windows 键盘通常没有 <code>Pause/Break</code> 键，所以按 <code>C</code> 键通常也能起作用。</p>
 <p>对于刚接触 Web 开发的读者来说，值得一提的是，<code>localhost</code> 是 <code>127.0.0.1</code> 的常用简写，所以 URL 地址 <code>http://127.0.0.1:8000/</code> 和 <code>http://localhost:8000/</code> 在功能上是等效的。在本书中，我们默认使用 <code>127.0.0.1:8000</code> ，因为这是 Django 在终端中输出的内容，但这两个选项都是可以的。</p>
 <p>如果你查看文件和文件夹，会注意到创建了一个新的 <code>db.sqlite3</code> 文件。如果不存在，SQLite 会在你首次尝试连接时自动创建一个新文件。</p>
-<pre><code>Layout
-├── django_project
+<pre><code class="language-Layout">├── django_project
 │   ├── __init__.py
 │   ├── asgi.py
 │   ├── urls.py
@@ -357,11 +356,11 @@ Quit the server with CTRL-BREAK.
 <p>值得注意的是，在一个命令行标签页中只能激活一个虚拟环境。在后续章节中，我们为每个新项目创建新的虚拟环境，所以要么确保停用当前环境，要么为新项目打开一个新的标签页。</p>
 <h4 id="_4">文本编辑器</h4>
 <p>命令行是我们执行程序命令的地方，而文本编辑器是编写代码的地方。计算机并不在乎你使用什么文本编辑器，最终结果都是代码。但是一个好的文本编辑器可以提供有用的提示，并帮你发现拼写错误。</p>
-<p>现在有很多现代化的文本编辑器可供选择，它们还带有有用的扩展，让 Python 和 Django 开发更加便捷。两个比较受欢迎的选择是 PyCharm 和 Visual Studio Code（VSCode）。PyCharm 有付费的专业版和免费的社区版，而 VSCode 是免费的。最终，选择什么文本编辑器并不重要，结果都是代码。</p>
+<p>现在有很多现代化的文本编辑器可供选择，它们还带有有用的扩展，让 Python 和 Django 开发更加便捷。两个比较受欢迎的选择是 <a href="https://www.jetbrains.com/pycharm/download/">PyCharm</a><sup id="fnref:25"><a class="footnote-ref" href="#fn:25">11</a></sup> 和 <a href="https://code.visualstudio.com/">Visual Studio Code（VSCode）</a><sup id="fnref:26"><a class="footnote-ref" href="#fn:26">12</a></sup>。PyCharm 有付费的专业版和免费的社区版，而 VSCode 是免费的。最终，选择什么文本编辑器并不重要，结果都是代码。</p>
 <h4 id="vscode">VSCode 配置</h4>
 <p>如果你还没有使用文本编辑器，可以从官方网站下载并安装 VSCode。有三个推荐的配置可以添加，以提高你的开发效率。</p>
 <p>第一个是在 VSCode 中添加官方的 Python 扩展。在 Windows 系统中，导航到 <code>文件 -&gt; 设置 -&gt; 扩展</code> ；在 macOS 系统中，选择 <code>Code -&gt; 设置 -&gt; 扩展</code> ，这样会弹出扩展市场的搜索栏。输入 “python” ，官方的微软扩展会是第一个搜索结果，安装它。</p>
-<p>第二个是添加 Black，这是一个 Python 代码格式化工具，正迅速成为 Python 社区的默认选择。在终端中，Windows 系统运行命令 <code>python -m pip install black</code> ，macOS 系统运行命令 <code>python3 -m pip install black</code> 。</p>
+<p>第二个是添加 <a href="https://pypi.org/project/black/">Black</a><sup id="fnref:27"><a class="footnote-ref" href="#fn:27">13</a></sup>，这是一个 Python 代码格式化工具，正迅速成为 Python 社区的默认选择。在终端中，Windows 系统运行命令 <code>python -m pip install black</code> ，macOS 系统运行命令 <code>python3 -m pip install black</code> 。</p>
 <pre><code class="language-Shell">(.venv) $ python -m pip install black
 </code></pre>
 <p>接下来，在 VSCode 中，Windows 系统通过导航到 <code>文件 -&gt; 首选项 -&gt; 设置</code> ，macOS 系统通过 <code>Code -&gt; 首选项 -&gt; 设置</code> 来打开设置。搜索 “默认格式化程序” ，在 “编辑器：默认格式化程序” 下拉列表中选择 “Black Formatter” 。</p>
@@ -370,21 +369,21 @@ Quit the server with CTRL-BREAK.
 <pre><code class="language-python"># hello.py
 print('Hello, World!')
 </code></pre>
-<p>保存时，它应该会自动更新为使用双引号，这是 Black 的默认偏好设置：<code>print("Hello, World!")</code> 。这意味着一切配置正确。</p>
+<p>保存时，它应该会自动更新为使用双引号，这是 <a href="https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html">Black 的默认偏好设置</a><sup id="fnref:28"><a class="footnote-ref" href="#fn:28">14</a></sup>：<code>print("Hello, World!")</code> 。这意味着一切配置正确。</p>
 <p>第三个也是最后一个配置，是让你可以直接从终端打开 VSCode。这项技术很有用，因为标准的工作流程是打开终端，导航到你想要工作的代码目录，然后用文本编辑器打开它。</p>
-<p>要启用这个功能，在 VSCode 中同时按下 <code>Command + Shift + P</code> 打开命令面板，它允许我们自定义 VSCode 的设置。然后，在命令面板中输入 <code>shell</code> ，顶部的结果将是 “Shell Command: Install code command in PATH” 。按下回车键安装这个快捷方式，会出现一条成功消息：“Shell command ‘code’ successfully installed in PATH.” 顺便说一下，<code>PATH</code> 变量通常用于自定义终端提示符。</p>
+<p>要启用这个功能，在 VSCode 中同时按下 <code>Command + Shift + P</code> 打开命令面板，它允许我们自定义 VSCode 的设置。然后，在命令面板中输入 <code>shell</code> ，顶部的结果将是 “Shell Command: Install code command in PATH” 。按下回车键安装这个快捷方式，会出现一条成功消息：“Shell command ‘code’ successfully installed in PATH.” 顺便说一下，<a href="https://en.wikipedia.org/wiki/PATH_(variable)"><code>PATH</code> 变量</a><sup id="fnref:29"><a class="footnote-ref" href="#fn:29">15</a></sup>通常用于自定义终端提示符。</p>
 <p>回到终端，导航到 <code>ch1-setup</code> 目录。如果你输入 <code>code .</code> ，它将在 VSCode 中打开。</p>
 <pre><code class="language-Shell">(.venv) $ code .
 </code></pre>
 <h4 id="git">安装 Git</h4>
-<p>最后一步是安装 Git，它是现代软件开发中不可或缺的版本控制系统。有了 Git，你可以与其他开发人员协作，通过提交记录跟踪所有工作，并且即使不小心删除了重要内容，也可以恢复到之前的任何代码版本！这不是一本关于 Git 的书，所以书中会给出所有必要的命令并简要解释，但如果你想了解更多关于 Git 的知识，互联网上有大量免费资源可供参考。</p>
+<p>最后一步是安装 Git，它是现代软件开发中不可或缺的版本控制系统。有了 Git，你可以与其他开发人员协作，通过提交记录跟踪所有工作，并且即使不小心删除了重要内容，也可以恢复到之前的任何代码版本！这不是一本关于 Git 的书，所以书中会给出所有必要的命令并简要解释，但如果你想了解更多<a href="https://docs.github.com/en/get-started/using-git/about-git">关于 Git 的知识</a><sup id="fnref:30"><a class="footnote-ref" href="#fn:30">16</a></sup>，互联网上有大量免费资源可供参考。</p>
 <p>在 Windows 系统中，访问官方网站 <code>https://git-scm.com/</code> ，点击 “Download” 链接，它会为你的计算机安装合适的版本。保存文件，打开下载文件夹，双击该文件启动 Git for Windows 安装程序。在早期的大多数默认设置页面点击 “Next” 按钮即可，这些默认设置就足够了，之后也可以更新。确保在 “Choosing the default editor used by Git”（选择 Git 使用的默认编辑器）选项下，选择 “Use Visual Studio Code as Git’s default editor”（使用 Visual Studio Code 作为 Git 的默认编辑器）。在 “Adjusting the name of the initial branch in new repositories”（调整新仓库的初始分支名称）部分，确保选中 “Override the default branch name for new repositories”（覆盖新仓库的默认分支名称）选项，以便使用 “main” 作为分支名。</p>
 <p>要确认 Git 是否在 Windows 系统上安装成功，关闭所有当前的 Shell 窗口，打开一个新窗口以加载对 <code>PATH</code> 变量的更改。（<code>PATH</code> 是一个环境变量，用于指定可执行程序的位置。换句话说，当你输入 <code>git</code> 时，命令行去哪里查找呢？）输入 <code>git --version</code> 来显示安装的 Git 版本。</p>
 <pre><code class="language-Shell"># Windows
 $ git --version
 git version 2.45.2.windows.1
 </code></pre>
-<p>在 macOS 系统中，Xcode 主要用于构建 iOS 应用程序，但它也包含了许多 macOS 上开发所需的功能。目前，通过 Xcode 安装 Git 是最简单的方法。要检查你的计算机是否安装了 Git，在新的终端窗口中输入 <code>git --version</code> 。</p>
+<p>在 macOS 系统中，<a href="https://developer.apple.com/xcode/">Xcode</a><sup id="fnref:31"><a class="footnote-ref" href="#fn:31">17</a></sup> 主要用于构建 iOS 应用程序，但它也包含了许多 macOS 上开发所需的功能。目前，通过 Xcode 安装 Git 是最简单的方法。要检查你的计算机是否安装了 Git，在新的终端窗口中输入 <code>git --version</code> 。</p>
 <pre><code class="language-Shell"># macOS
 $ git --version
 git version 2.45.2
@@ -402,7 +401,63 @@ $ git config --global init.defaultBranch main
 </code></pre>
 <p>以后你随时可以通过重新输入相同的命令，并使用新的姓名或电子邮件地址来更改这些配置。</p>
 <h4 id="_5">结论</h4>
-<p>从头开始配置软件开发环境具有挑战性。即使是经验丰富的程序员在这项任务上也会遇到困难，但这是一次性的麻烦，绝对值得。我们现在可以快速启动新的 Django 项目，并且已经学习了命令行、Python 交互模式、如何安装最新版本的 Python 和 Django、配置文本编辑器以及安装 Git。一切都已准备就绪，我们将在下一章构建第一个正式的 Django 网站。</p></p>
+<p>从头开始配置软件开发环境具有挑战性。即使是经验丰富的程序员在这项任务上也会遇到困难，但这是一次性的麻烦，绝对值得。我们现在可以快速启动新的 Django 项目，并且已经学习了命令行、Python 交互模式、如何安装最新版本的 Python 和 Django、配置文本编辑器以及安装 Git。一切都已准备就绪，我们将在下一章构建第一个正式的 Django 网站。</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:15">
+<p>https://en.wikipedia.org/wiki/Z_shell&#160;<a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:16">
+<p>https://en.wikipedia.org/wiki/Bash_(Unix_shell)&#160;<a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:17">
+<p>https://www.python.org/downloads/&#160;<a class="footnote-backref" href="#fnref:17" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:18">
+<p>https://docs.python.org/3/library/venv.html&#160;<a class="footnote-backref" href="#fnref:18" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:19">
+<p>https://docs.python.org/3/using/cmdline.html#cmdoption-m&#160;<a class="footnote-backref" href="#fnref:19" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:20">
+<p>https://pypi.org/&#160;<a class="footnote-backref" href="#fnref:20" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:21">
+<p>https://pypi.org/project/Django/&#160;<a class="footnote-backref" href="#fnref:21" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:22">
+<p>https://pypi.org/project/pip/&#160;<a class="footnote-backref" href="#fnref:22" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:23">
+<p>https://snarky.ca/why-you-should-use-python-m-pip/&#160;<a class="footnote-backref" href="#fnref:23" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:24">
+<p>https://docs.djangoproject.com/en/5.0/ref/django-admin/&#160;<a class="footnote-backref" href="#fnref:24" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:25">
+<p>https://www.jetbrains.com/pycharm/download/&#160;<a class="footnote-backref" href="#fnref:25" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:26">
+<p>https://code.visualstudio.com/&#160;<a class="footnote-backref" href="#fnref:26" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:27">
+<p>https://pypi.org/project/black/&#160;<a class="footnote-backref" href="#fnref:27" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:28">
+<p>https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html&#160;<a class="footnote-backref" href="#fnref:28" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn:29">
+<p>https://en.wikipedia.org/wiki/PATH_(variable)&#160;<a class="footnote-backref" href="#fnref:29" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+<li id="fn:30">
+<p>https://docs.github.com/en/get-started/using-git/about-git&#160;<a class="footnote-backref" href="#fnref:30" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+</li>
+<li id="fn:31">
+<p>https://developer.apple.com/xcode/&#160;<a class="footnote-backref" href="#fnref:31" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div></p>
     </article>
 </section>
 <!-- endblock -->
