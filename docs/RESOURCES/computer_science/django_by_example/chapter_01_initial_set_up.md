@@ -14,7 +14,7 @@ date: 2025-03-06
 
 鉴于命令行的用户界面极为简洁，只有一个空白屏幕和一个闪烁的光标，这会让新手望而却步。命令运行后往往没有反馈，而且如果不小心，一个命令就可能清空整个计算机的内容，并且不会弹出任何警告！因此，使用命令行时要格外小心。不要盲目复制和粘贴在网上找到的命令，只信赖可靠的资源。在日常使用中，有多个术语指代命令行：命令行界面（CLI）、控制台、终端、Shell 或提示符。从技术上讲，终端是打开一个新窗口以访问命令行的程序，控制台是一个基于文本的应用程序，而 Shell 是在底层操作系统上运行命令的程序。提示符是输入和运行命令的地方。一开始很容易被这些术语弄混淆，但它们本质上都指的是：命令行是我们在计算机上运行和执行纯文本命令的地方。
 
-Windows 系统内置的终端和 Shell 都叫 PowerShell。要打开它，找到屏幕底部 Windows 按钮旁边的任务栏，输入“PowerShell”来启动应用程序。它会打开一个新窗口，背景为深蓝色，在“>”提示符后有一个闪烁的光标。这是在我电脑上的显示样子：
+Windows 系统内置的终端和 Shell 都叫 PowerShell。要打开它，找到屏幕底部 Windows 按钮旁边的任务栏中的搜索框，输入“PowerShell”来启动应用程序。它会打开一个新窗口，背景为深蓝色，在“>”提示符后有一个闪烁的光标。这是在我电脑上的显示样子：
 
 ```shell
 PS C:\Windows\System32>
@@ -110,7 +110,7 @@ $ exit
 
 通过练习，命令行操作电脑比使用鼠标效率高得多。完成本书的学习，你无需成为命令行专家：每次我都会提供具体的操作指令。但如果你感兴趣，每个操作系统的完整 Shell 命令列表可在 ss64.com 上查看。
 
-#### 在 Windows 系统上安装 Python 3
+#### 在 Windows 上安装 Python 3
 
 在 Windows 系统中，微软在应用商店中提供了 Python 3 的社区版本。在屏幕底部的搜索栏中输入“python”，在应用商店中选择“Python 3.12”的搜索结果，点击蓝色的“获取”按钮进行下载。
 
@@ -131,7 +131,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 你可以通过输入“exit()”或按 Ctrl-Z 再按回车键退出 Python 解释器。
 
-#### 在 Mac 系统上安装 Python 3
+#### 在 Mac 上安装 Python 3
 
 在 Mac 系统中，从 Python 官方网站下载安装程序是最佳选择。在新的浏览器窗口中，访问 [Python 下载页面](https://www.python.org/downloads/)[^17]，点击“Download the latest version for Mac OS X.”下方的按钮。在撰写本文时，最新版本是 Python 3.12。安装包会保存在“下载”目录中：双击它启动 Python 安装程序，然后按照提示进行操作。
 
@@ -361,7 +361,7 @@ Quit the server with CTRL-BREAK.
 
 如果你还没有使用文本编辑器，可以从官方网站下载并安装 VSCode。有三个推荐的配置可以添加，以提高你的开发效率。
 
-第一个是在 VSCode 中添加官方的 Python 扩展。在 Windows 系统中，导航到 `文件 -> 设置 -> 扩展` ；在 macOS 系统中，选择 `Code -> 设置 -> 扩展` ，这样会弹出扩展市场的搜索栏。输入 “python” ，官方的微软扩展会是第一个搜索结果，安装它。
+第一个是在 VSCode 中添加官方的 Python 扩展。在 Windows 系统中，导航到 `File -> Settings -> Extensions` ；在 macOS 系统中，选择 `Code -> Settings -> Extensions` ，这样会弹出扩展市场的搜索栏。输入 “python” ，微软官方的扩展会是第一个搜索结果，安装它。
 
 第二个是添加 [Black](https://pypi.org/project/black/)[^27]，这是一个 Python 代码格式化工具，正迅速成为 Python 社区的默认选择。在终端中，Windows 系统运行命令 `python -m pip install black` ，macOS 系统运行命令 `python3 -m pip install black` 。
 
@@ -369,9 +369,9 @@ Quit the server with CTRL-BREAK.
 (.venv) $ python -m pip install black
 ```
 
-接下来，在 VSCode 中，Windows 系统通过导航到 `文件 -> 首选项 -> 设置` ，macOS 系统通过 `Code -> 首选项 -> 设置` 来打开设置。搜索 “默认格式化程序” ，在 “编辑器：默认格式化程序” 下拉列表中选择 “Black Formatter” 。
+接下来，在 VSCode 中，Windows 系统通过导航到 `File -> Preferences  -> Settings ` ，macOS 系统通过 `Code -> Preferences -> Settings ` 来打开设置。搜索 “default formatter” ，在 “Editor: Default Formatter” 下拉列表中选择 “Black Formatter” 。
 
-然后搜索 “保存时格式化” ，启用 “编辑器：保存时格式化” 选项。这样，每当保存一个 `.py` 文件时，Black 会自动格式化你的代码。
+然后搜索 “format on save” ，启用 “Editor: Format on Save.” 选项。这样，每当保存一个 `.py` 文件时，Black 会自动格式化你的代码。
 
 为了确认这是否有效，使用文本编辑器在桌面上的 `ch1-setup` 目录中创建并保存一个名为 `hello.py` 的新文件，用单引号输入以下内容：
 
