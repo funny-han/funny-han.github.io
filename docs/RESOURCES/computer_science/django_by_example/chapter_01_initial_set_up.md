@@ -1,3 +1,7 @@
+---
+date: 2025-03-06
+---
+
 ### 第 1 章：初始设置
 
 本章重点介绍如何配置 Windows 或 macOS 电脑，以便进行 Django 项目开发。你可能迫不及待地想要开始，但现在正确配置电脑，日后会为你省去许多麻烦。
@@ -31,7 +35,7 @@ PS C:\Users>
 Wills-Macbook-Pro:~ wsv%
 ```
 
-自 2019 年起，macOS 的默认 Shell 是 zsh，它使用“%”作为提示符。如果你看到的提示符是“$”，那么你使用的是之前 macOS 的默认 Shell——Bash。虽然本书中的大多数命令在这两种 Shell 中都可以互换使用，但如果你的电脑仍在使用 Bash，建议在网上查找如何通过系统偏好设置切换到 zsh。
+自 2019 年起，macOS 的默认 Shell 是 [zsh](https://en.wikipedia.org/wiki/Z_shell)[^15]，它使用“%”作为提示符。如果你看到的提示符是“$”，那么你使用的是之前 macOS 的默认 Shell——[Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))[^16]。虽然本书中的大多数命令在这两种 Shell 中都可以互换使用，但如果你的电脑仍在使用 Bash，建议在网上查找如何通过系统偏好设置切换到 zsh。
 
 注意：在本书中，我们将对所有 Shell 命令使用通用的 Unix“$”提示符，而不是在 Windows 系统中用“>”、在 macOS 系统中用“%”来交替显示。
 
@@ -129,7 +133,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 #### 在 Mac 系统上安装 Python 3
 
-在 Mac 系统中，从 Python 官方网站下载安装程序是最佳选择。在新的浏览器窗口中，访问 Python 下载页面，点击“Download the latest version for Mac OS X.”下方的按钮。在撰写本文时，最新版本是 Python 3.12。安装包会保存在“下载”目录中：双击它启动 Python 安装程序，然后按照提示进行操作。
+在 Mac 系统中，从 Python 官方网站下载安装程序是最佳选择。在新的浏览器窗口中，访问 [Python 下载页面](https://www.python.org/downloads/)[^17]，点击“Download the latest version for Mac OS X.”下方的按钮。在撰写本文时，最新版本是 Python 3.12。安装包会保存在“下载”目录中：双击它启动 Python 安装程序，然后按照提示进行操作。
 
 要确认下载是否成功，打开一个新的终端窗口，输入“python3 --version”。
 
@@ -169,7 +173,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 幸运的是，有一个简单的解决方案。虚拟环境允许你在同一台计算机上为每个 Python 项目创建并管理独立的环境。每个新的 Python 和 Django 项目都应该使用一个专用的虚拟环境。
 
-实现虚拟环境的方法有多种，最简单的是使用“venv”模块，它是 Python 3 标准库的一部分，已随 Python 安装。要试用它，先导航到桌面上已有的“ch1-setup”目录。
+实现虚拟环境的方法有多种，最简单的是使用“[venv](https://docs.python.org/3/library/venv.html)[^18]”模块，它是 Python 3 标准库的一部分，已随 Python 安装。要试用它，先导航到桌面上已有的“ch1-setup”目录。
 
 ```shell
 # Windows
@@ -178,7 +182,7 @@ $ cd onedrive\desktop\code\ch1-setup
 $ cd ~/desktop/code/ch1-setup
 ```
 
-要在这个新目录中创建虚拟环境，Windows 系统使用“python -m venv <name_of_env>”格式，macOS 系统使用“python3 -m venv <name_of_env>”格式。这个命令中的“-m”部分称为标志，它是一种约定，用于表明用户请求的是非默认行为。标志的格式通常是“-”加上一个字母或字母组合。由于“venv”是一个模块名，所以“-m”标志是必需的。开发人员可以自行选择合适的环境名称，常见的选择是像我们这里一样，命名为“.venv”。
+要在这个新目录中创建虚拟环境，Windows 系统使用“python -m venv <name_of_env>”格式，macOS 系统使用“python3 -m venv <name_of_env>”格式。这个命令中的[“-m”部分称为标志](https://docs.python.org/3/using/cmdline.html#cmdoption-m)[^19]，它是一种约定，用于表明用户请求的是非默认行为。标志的格式通常是“-”加上一个字母或字母组合。由于“venv”是一个模块名，所以“-m”标志是必需的。开发人员可以自行选择合适的环境名称，常见的选择是像我们这里一样，命名为“.venv”。
 
 ```shell
 # Windows
@@ -227,9 +231,9 @@ $
 
 #### PyPI（Python 包索引）
 
-PyPI（Python Package Index）是所有 Python 项目的核心存储库。你可以看到 Django 在其中，本书中用到的所有其他 Python 包也都在。
+[PyPI（Python Package Index）](https://pypi.org/)[^20]是所有 Python 项目的核心存储库。你可以看到 [Django 在其中](https://pypi.org/project/Django/)[^21]，本书中用到的所有其他 Python 包也都在。
 
-我们将使用 pip（最流行的包安装工具）来安装 Python 包。它已随 Python 3 一同安装，但为确保使用的是最新版本的 pip，我们花点时间更新一下。运行以下命令：
+我们将使用 [pip](https://pypi.org/project/pip/)[^22]（最流行的包安装工具）来安装 Python 包。它已随 Python 3 一同安装，但为确保使用的是最新版本的 pip，我们花点时间更新一下。运行以下命令：
 
 ```Shell
 $ python -m pip install --upgrade pip
@@ -237,7 +241,7 @@ $ python -m pip install --upgrade pip
 
 这个命令会安装并升级（如有必要）pip 的最新版本。注意，我们此时不在虚拟环境中，所以这个版本的 pip 将被全局安装在本地计算机上。
 
-为什么我们使用“python -m pip”而不是直接用“pip”来执行这个命令呢？后者确实也能工作，但可能会引发一些问题。使用带有“-m”标志的 python 命令可确保使用的是预期的 Python 版本，即便计算机上安装了多个 Python 版本。例如，若你的计算机上同时安装了 Python 3.7 和 3.12，“pip install”命令可能一会儿使用 Python 3.7，一会儿又使用 Python 3.12，这并非我们期望的行为。如果你好奇背后的原因，Brett Cannon 有更全面的解释。
+为什么我们使用“python -m pip”而不是直接用“pip”来执行这个命令呢？后者确实也能工作，但可能会引发一些问题。使用带有“-m”标志的 python 命令可确保使用的是预期的 Python 版本，即便计算机上安装了多个 Python 版本。例如，若你的计算机上同时安装了 Python 3.7 和 3.12，“pip install”命令可能一会儿使用 Python 3.7，一会儿又使用 Python 3.12，这并非我们期望的行为。如果你好奇背后的原因，[Brett Cannon](https://snarky.ca/why-you-should-use-python-m-pip/)[^23] 有更全面的解释。
 
 #### 安装 Django
 
@@ -297,7 +301,7 @@ Layout
 
 #### 开发服务器
 
-Django 包含一个内置的轻量级本地开发 Web 服务器，可以通过 `runserver` 命令访问。开发服务器会为每个请求自动重新加载 Python 代码，并提供静态文件服务。不过，有些操作（如添加文件）不会自动触发重启，所以如果你的代码没有按预期运行，手动重启通常是第一步的调试操作。默认情况下，服务器在 IP 地址 `127.0.0.1` 的 8000 端口上运行，`127.0.0.1` 被称为 “回环地址”，因为数据不会从我们的计算机（主机）发送到本地网络或互联网，而是 “回环” 到自身，这样发送数据的计算机就成为了接收者。
+Django 包含一个内置的轻量级本地开发 Web 服务器，可以通过 [`runserver`](https://docs.djangoproject.com/en/5.0/ref/django-admin/)[^24] 命令访问。开发服务器会为每个请求自动重新加载 Python 代码，并提供静态文件服务。不过，有些操作（如添加文件）不会自动触发重启，所以如果你的代码没有按预期运行，手动重启通常是第一步的调试操作。默认情况下，服务器在 IP 地址 `127.0.0.1` 的 8000 端口上运行，`127.0.0.1` 被称为 “回环地址”，因为数据不会从我们的计算机（主机）发送到本地网络或互联网，而是 “回环” 到自身，这样发送数据的计算机就成为了接收者。
 
 现在让我们启动本地开发服务器，确认一切是否正常工作。我们将使用 `manage.py` 来执行 `runserver` 管理命令。
 
@@ -313,8 +317,10 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CTRL-BREAK.
 ```
 
-不用理会关于 “18 个未应用的迁移” 的红色文本，我们将在下一章处理这个问题。目前关键的是，在你的网络浏览器中访问 `http://127.0.0.1:8000/` ，确保能看到以下界面：
-（此处原文可能有界面截图相关描述，但未提供，所以未翻译相关内容）
+不用理会关于 “You have 18 unapplied migration(s). ” 的红色文本，我们将在下一章处理这个问题。目前关键的是，在你的网络浏览器中访问 `http://127.0.0.1:8000/` ，确保能看到以下界面：
+
+![Django Welcome Page](./assets/ch01_django_welcome_page.png)
+
 安装成功了！恭喜！你看到这个页面是因为你的设置文件中 `DEBUG=True` ，并且你还没有配置任何 URL。
 
 注意：在 Windows 系统上，最后一行提示使用 `CONTROL-BREAK` 来停止服务器，而在 macOS 系统上是使用 `CONTROL-C` 。较新的 Windows 键盘通常没有 `Pause/Break` 键，所以按 `C` 键通常也能起作用。
@@ -323,8 +329,7 @@ Quit the server with CTRL-BREAK.
 
 如果你查看文件和文件夹，会注意到创建了一个新的 `db.sqlite3` 文件。如果不存在，SQLite 会在你首次尝试连接时自动创建一个新文件。
 
-```
-Layout
+```Layout
 ├── django_project
 │   ├── __init__.py
 │   ├── asgi.py
@@ -350,7 +355,7 @@ Layout
 
 命令行是我们执行程序命令的地方，而文本编辑器是编写代码的地方。计算机并不在乎你使用什么文本编辑器，最终结果都是代码。但是一个好的文本编辑器可以提供有用的提示，并帮你发现拼写错误。
 
-现在有很多现代化的文本编辑器可供选择，它们还带有有用的扩展，让 Python 和 Django 开发更加便捷。两个比较受欢迎的选择是 PyCharm 和 Visual Studio Code（VSCode）。PyCharm 有付费的专业版和免费的社区版，而 VSCode 是免费的。最终，选择什么文本编辑器并不重要，结果都是代码。
+现在有很多现代化的文本编辑器可供选择，它们还带有有用的扩展，让 Python 和 Django 开发更加便捷。两个比较受欢迎的选择是 [PyCharm](https://www.jetbrains.com/pycharm/download/)[^25] 和 [Visual Studio Code（VSCode）](https://code.visualstudio.com/)[^26]。PyCharm 有付费的专业版和免费的社区版，而 VSCode 是免费的。最终，选择什么文本编辑器并不重要，结果都是代码。
 
 #### VSCode 配置
 
@@ -358,7 +363,7 @@ Layout
 
 第一个是在 VSCode 中添加官方的 Python 扩展。在 Windows 系统中，导航到 `文件 -> 设置 -> 扩展` ；在 macOS 系统中，选择 `Code -> 设置 -> 扩展` ，这样会弹出扩展市场的搜索栏。输入 “python” ，官方的微软扩展会是第一个搜索结果，安装它。
 
-第二个是添加 Black，这是一个 Python 代码格式化工具，正迅速成为 Python 社区的默认选择。在终端中，Windows 系统运行命令 `python -m pip install black` ，macOS 系统运行命令 `python3 -m pip install black` 。
+第二个是添加 [Black](https://pypi.org/project/black/)[^27]，这是一个 Python 代码格式化工具，正迅速成为 Python 社区的默认选择。在终端中，Windows 系统运行命令 `python -m pip install black` ，macOS 系统运行命令 `python3 -m pip install black` 。
 
 ```Shell
 (.venv) $ python -m pip install black
@@ -375,11 +380,11 @@ Layout
 print('Hello, World!')
 ```
 
-保存时，它应该会自动更新为使用双引号，这是 Black 的默认偏好设置：`print("Hello, World!")` 。这意味着一切配置正确。
+保存时，它应该会自动更新为使用双引号，这是 [Black 的默认偏好设置](https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html)[^28]：`print("Hello, World!")` 。这意味着一切配置正确。
 
 第三个也是最后一个配置，是让你可以直接从终端打开 VSCode。这项技术很有用，因为标准的工作流程是打开终端，导航到你想要工作的代码目录，然后用文本编辑器打开它。
 
-要启用这个功能，在 VSCode 中同时按下 `Command + Shift + P` 打开命令面板，它允许我们自定义 VSCode 的设置。然后，在命令面板中输入 `shell` ，顶部的结果将是 “Shell Command: Install code command in PATH” 。按下回车键安装这个快捷方式，会出现一条成功消息：“Shell command ‘code’ successfully installed in PATH.” 顺便说一下，`PATH` 变量通常用于自定义终端提示符。
+要启用这个功能，在 VSCode 中同时按下 `Command + Shift + P` 打开命令面板，它允许我们自定义 VSCode 的设置。然后，在命令面板中输入 `shell` ，顶部的结果将是 “Shell Command: Install code command in PATH” 。按下回车键安装这个快捷方式，会出现一条成功消息：“Shell command ‘code’ successfully installed in PATH.” 顺便说一下，[`PATH` 变量](https://en.wikipedia.org/wiki/PATH_(variable))[^29]通常用于自定义终端提示符。
 
 回到终端，导航到 `ch1-setup` 目录。如果你输入 `code .` ，它将在 VSCode 中打开。
 
@@ -389,7 +394,7 @@ print('Hello, World!')
 
 #### 安装 Git
 
-最后一步是安装 Git，它是现代软件开发中不可或缺的版本控制系统。有了 Git，你可以与其他开发人员协作，通过提交记录跟踪所有工作，并且即使不小心删除了重要内容，也可以恢复到之前的任何代码版本！这不是一本关于 Git 的书，所以书中会给出所有必要的命令并简要解释，但如果你想了解更多关于 Git 的知识，互联网上有大量免费资源可供参考。
+最后一步是安装 Git，它是现代软件开发中不可或缺的版本控制系统。有了 Git，你可以与其他开发人员协作，通过提交记录跟踪所有工作，并且即使不小心删除了重要内容，也可以恢复到之前的任何代码版本！这不是一本关于 Git 的书，所以书中会给出所有必要的命令并简要解释，但如果你想了解更多[关于 Git 的知识](https://docs.github.com/en/get-started/using-git/about-git)[^30]，互联网上有大量免费资源可供参考。
 
 在 Windows 系统中，访问官方网站 `https://git-scm.com/` ，点击 “Download” 链接，它会为你的计算机安装合适的版本。保存文件，打开下载文件夹，双击该文件启动 Git for Windows 安装程序。在早期的大多数默认设置页面点击 “Next” 按钮即可，这些默认设置就足够了，之后也可以更新。确保在 “Choosing the default editor used by Git”（选择 Git 使用的默认编辑器）选项下，选择 “Use Visual Studio Code as Git’s default editor”（使用 Visual Studio Code 作为 Git 的默认编辑器）。在 “Adjusting the name of the initial branch in new repositories”（调整新仓库的初始分支名称）部分，确保选中 “Override the default branch name for new repositories”（覆盖新仓库的默认分支名称）选项，以便使用 “main” 作为分支名。
 
@@ -401,7 +406,7 @@ $ git --version
 git version 2.45.2.windows.1
 ```
 
-在 macOS 系统中，Xcode 主要用于构建 iOS 应用程序，但它也包含了许多 macOS 上开发所需的功能。目前，通过 Xcode 安装 Git 是最简单的方法。要检查你的计算机是否安装了 Git，在新的终端窗口中输入 `git --version` 。
+在 macOS 系统中，[Xcode](https://developer.apple.com/xcode/)[^31] 主要用于构建 iOS 应用程序，但它也包含了许多 macOS 上开发所需的功能。目前，通过 Xcode 安装 Git 是最简单的方法。要检查你的计算机是否安装了 Git，在新的终端窗口中输入 `git --version` 。
 
 ```Shell
 # macOS
@@ -432,3 +437,22 @@ $ git config --global init.defaultBranch main
 #### 结论
 
 从头开始配置软件开发环境具有挑战性。即使是经验丰富的程序员在这项任务上也会遇到困难，但这是一次性的麻烦，绝对值得。我们现在可以快速启动新的 Django 项目，并且已经学习了命令行、Python 交互模式、如何安装最新版本的 Python 和 Django、配置文本编辑器以及安装 Git。一切都已准备就绪，我们将在下一章构建第一个正式的 Django 网站。
+
+
+[^15]: https://en.wikipedia.org/wiki/Z_shell
+[^16]: https://en.wikipedia.org/wiki/Bash_(Unix_shell)
+[^17]: https://www.python.org/downloads/
+[^18]: https://docs.python.org/3/library/venv.html
+[^19]: https://docs.python.org/3/using/cmdline.html#cmdoption-m
+[^20]: https://pypi.org/
+[^21]: https://pypi.org/project/Django/
+[^22]: https://pypi.org/project/pip/
+[^23]: https://snarky.ca/why-you-should-use-python-m-pip/
+[^24]: https://docs.djangoproject.com/en/5.0/ref/django-admin/
+[^25]: https://www.jetbrains.com/pycharm/download/
+[^26]: https://code.visualstudio.com/
+[^27]: https://pypi.org/project/black/
+[^28]: https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html
+[^29]: https://en.wikipedia.org/wiki/PATH_(variable)
+[^30]: https://docs.github.com/en/get-started/using-git/about-git
+[^31]: https://developer.apple.com/xcode/

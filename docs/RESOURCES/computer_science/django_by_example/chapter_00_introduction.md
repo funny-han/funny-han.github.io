@@ -1,3 +1,7 @@
+---
+date: 2025-03-06
+---
+
 ### 第 0 章：引言
 
 欢迎阅读《Django 新手入门》，本书采用基于项目的方法，帮助你学习使用 Django 进行 Web 开发。[Django](https://djangoproject.com/)[^1] 是一个用 Python 编写的免费开源 Web 框架，从学生、初创企业创始人到世界上大型的网站（如 Instagram、YouTube、Reddit、Netflix、Dropbox 和 Spotify），都在使用它。其 “内置电池 ”的理念，即自带诸多功能，为你提供了快速创建强大的实际 Web 应用所需的所有内置功能，因此它的口号是 “为赶时间的完美主义者打造的 Web 框架”。
