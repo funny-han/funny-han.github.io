@@ -118,8 +118,7 @@ $ python --version Python 3.12.3
 
 结果应该至少是 Python 3.12。然后，输入“python”，从命令行 Shell 中打开 Python 解释器。
 
-```
-Shell
+```Shell
 $ python
 Python 3.12.3 (v3.12.3:f6650f9ad7, Apr 9 2024, 08:18:47)
 [MSC v.1937 64 bit (AMD64)] on win32
@@ -134,15 +133,13 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 要确认下载是否成功，打开一个新的终端窗口，输入“python3 --version”。
 
-```
-Shell
+```Shell
 $ python3 --version Python 3.12.3
 ```
 
 然后，输入“python3”打开 Python 解释器。
 
-```
-Shell
+```Shell
 $ python3
 Python 3.12.3 (v3.12.3:f6650f9ad7, Apr 9 2024, 08:18:47)
 [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
@@ -156,8 +153,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 在命令行中，Windows 系统输入“python”，macOS 系统输入“python3”，即可打开 Python 解释器，也称为 Python 交互模式。新出现的“>>>”提示符表明你现在进入了 Python 环境，而不是在命令行中。如果你尝试运行之前的 Shell 命令，如“cd”“ls”“mkdir”，将会报错。此时可以运行真正的 Python 代码，例如，尝试输入“1 + 1”和“print("Hello Python!")”。每个命令输入完后按回车键运行。
 
-```
-Shell
+```Shell
 >>> 1 + 1
 2
 >>> print("Hello Python!") Hello Python!
@@ -175,7 +171,7 @@ Shell
 
 实现虚拟环境的方法有多种，最简单的是使用“venv”模块，它是 Python 3 标准库的一部分，已随 Python 安装。要试用它，先导航到桌面上已有的“ch1-setup”目录。
 
-```
+```shell
 # Windows
 $ cd onedrive\desktop\code\ch1-setup
 # macOS
@@ -184,7 +180,7 @@ $ cd ~/desktop/code/ch1-setup
 
 要在这个新目录中创建虚拟环境，Windows 系统使用“python -m venv <name_of_env>”格式，macOS 系统使用“python3 -m venv <name_of_env>”格式。这个命令中的“-m”部分称为标志，它是一种约定，用于表明用户请求的是非默认行为。标志的格式通常是“-”加上一个字母或字母组合。由于“venv”是一个模块名，所以“-m”标志是必需的。开发人员可以自行选择合适的环境名称，常见的选择是像我们这里一样，命名为“.venv”。
 
-```
+```shell
 # Windows
 $ python -m venv .venv
 # macOS
@@ -193,7 +189,7 @@ $ python3 -m venv .venv
 
 在 Windows 系统中，“ls”命令会显示目录中的“.venv”目录，但在 macOS 系统中，它看起来是空的。实际上，“.venv”目录是存在的，只是因为名称前面的“.”使其成为了“隐藏”目录。隐藏文件和目录是开发人员用来表明其内容很重要，应与普通文件区别对待的一种方式。要查看它，可以尝试使用“ls -la”命令，它会显示所有目录和文件，包括隐藏的。
 
-```
+```shell
 $ ls -la
 total 0
 drwxr-xr-x 3 wsv staff 96 Dec 12 11:10 .
@@ -207,7 +203,7 @@ drwxr-xr-x 6 wsv staff 192 Dec 12 11:10 .venv
 
 以下是创建并激活一个名为“.venv”的新虚拟环境的完整命令：
 
-```
+```shell
 # Windows
 $ python -m venv .venv
 $ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
@@ -222,8 +218,7 @@ $ python3 -m venv .venv $ source .venv/bin/activate
 
 要停用并退出虚拟环境，输入“deactivate”。
 
-```
-Shell
+```Shell
 (.venv) $ deactivate
 $
 ```
@@ -236,8 +231,7 @@ PyPI（Python Package Index）是所有 Python 项目的核心存储库。你可
 
 我们将使用 pip（最流行的包安装工具）来安装 Python 包。它已随 Python 3 一同安装，但为确保使用的是最新版本的 pip，我们花点时间更新一下。运行以下命令：
 
-```
-Shell
+```Shell
 $ python -m pip install --upgrade pip
 ```
 
@@ -251,7 +245,7 @@ $ python -m pip install --upgrade pip
 
 在“ch1-setup”目录中，重新激活现有的虚拟环境并安装 Django。
 
-```
+```shell
 # Windows
 $ .venv\Scripts\Activate.ps1 (.venv) $ python -m pip install django~=5.0.0
 # macOS
@@ -268,8 +262,7 @@ $ source .venv/bin/activate (.venv) $ python3 -m pip install django~=5.0.0
 
 要创建一个新的 Django 项目，使用命令`django-admin startproject django_project .` 。Django 项目几乎可以取任何名字，但在本书中我们将使用 `django_project` 。
 
-```
-Shell
+```Shell
 (.venv) $ django-admin startproject django_project .
 ```
 
@@ -308,8 +301,7 @@ Django 包含一个内置的轻量级本地开发 Web 服务器，可以通过 `
 
 现在让我们启动本地开发服务器，确认一切是否正常工作。我们将使用 `manage.py` 来执行 `runserver` 管理命令。
 
-```
-Shell
+```Shell
 (.venv) $ python manage.py runserver
 Watching for file changes with StatReloader
 Performing system checks...
@@ -345,8 +337,7 @@ Layout
 
 现在，用 `Control + c` 停止本地服务器。然后，输入 `deactivate` 并按回车键，退出虚拟环境。
 
-```
-Shell
+```Shell
 # Windows或macOS
 (.venv) $ deactivate
 ```
@@ -369,8 +360,7 @@ Shell
 
 第二个是添加 Black，这是一个 Python 代码格式化工具，正迅速成为 Python 社区的默认选择。在终端中，Windows 系统运行命令 `python -m pip install black` ，macOS 系统运行命令 `python3 -m pip install black` 。
 
-```
-Shell
+```Shell
 (.venv) $ python -m pip install black
 ```
 
@@ -393,8 +383,7 @@ print('Hello, World!')
 
 回到终端，导航到 `ch1-setup` 目录。如果你输入 `code .` ，它将在 VSCode 中打开。
 
-```
-Shell
+```Shell
 (.venv) $ code .
 ```
 
@@ -406,8 +395,7 @@ Shell
 
 要确认 Git 是否在 Windows 系统上安装成功，关闭所有当前的 Shell 窗口，打开一个新窗口以加载对 `PATH` 变量的更改。（`PATH` 是一个环境变量，用于指定可执行程序的位置。换句话说，当你输入 `git` 时，命令行去哪里查找呢？）输入 `git --version` 来显示安装的 Git 版本。
 
-```
-Shell
+```Shell
 # Windows
 $ git --version
 git version 2.45.2.windows.1
@@ -415,8 +403,7 @@ git version 2.45.2.windows.1
 
 在 macOS 系统中，Xcode 主要用于构建 iOS 应用程序，但它也包含了许多 macOS 上开发所需的功能。目前，通过 Xcode 安装 Git 是最简单的方法。要检查你的计算机是否安装了 Git，在新的终端窗口中输入 `git --version` 。
 
-```
-Shell
+```Shell
 # macOS
 $ git --version
 git version 2.45.2
@@ -426,8 +413,7 @@ git version 2.45.2
 
 请注意，Xcode 是一个大型软件包，所以首次下载可能需要一些时间。Xcode 主要用于构建 iOS 应用程序，但它包含了许多 macOS 开发所需的功能。下载完成后，关闭所有现有的终端 Shell，打开一个新窗口，输入 `git --version` 确认安装是否成功。
 
-```
-Shell
+```Shell
 # macOS
 $ git --version
 git version 2.45.2
@@ -435,8 +421,7 @@ git version 2.45.2
 
 一旦 Git 安装在你的本地机器上，我们必须进行一次系统配置，声明与你所有 Git 提交相关联的姓名和电子邮件地址，同时将默认分支名称设置为 `main` 。在命令行 Shell 中，输入以下两行内容。确保用你自己的姓名和电子邮件地址替换 “Your Name” 和 “yourname@email.com” ，不要使用默认值！
 
-```
-Shell
+```Shell
 $ git config --global user.name "Your Name"
 $ git config --global user.email "yourname@email.com"
 $ git config --global init.defaultBranch main
